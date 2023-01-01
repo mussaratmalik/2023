@@ -34,15 +34,23 @@
                if (http_request1.readyState == 4  ) {
                   var jsonObj = JSON.parse(http_request1.responseText);
                   console.log(jsonObj);
-                  document.getElementById("Name1").innerHTML = jsonObj[0].name;
-                  document.getElementById("Species1").innerHTML = jsonObj[0].species;
-                  document.getElementById("foods1").innerHTML = jsonObj[0].foods.dislikes;
-                  document.getElementById("likes1").innerHTML = jsonObj[0].foods.likes;
+                  document.getElementById("Name").innerHTML = jsonObj[0].name;
+                  document.getElementById("Species").innerHTML = jsonObj[0].species;
+                  document.getElementById("foods").innerHTML = jsonObj[0].foods.dislikes;
+                  document.getElementById("likes").innerHTML = jsonObj[0].foods.likes;
+                  document.getElementById("Name1").innerHTML = jsonObj[1].name;
+                  document.getElementById("Species1").innerHTML = jsonObj[1].species;
+                  document.getElementById("foods1").innerHTML = jsonObj[1].foods.dislikes;
+                  document.getElementById("likes1").innerHTML = jsonObj[1].foods.likes;
+                  document.getElementById("Name2").innerHTML = jsonObj[2].name;
+                  document.getElementById("Species2").innerHTML = jsonObj[2].species;
+                  document.getElementById("foods2").innerHTML = jsonObj[2].foods.dislikes;
+                  document.getElementById("likes2").innerHTML = jsonObj[2].foods.likes;
 
                }
             }
-            http_request.open("GET", data_file, true);
-            http_request.send();
+            http_request1.open("GET", data_file1, true);
+            http_request1.send();
          }
       </script>
    </head>
