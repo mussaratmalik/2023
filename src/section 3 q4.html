@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sumPolygon(){
+            var side=document.getElementById("polygon").value;
+            if(isNaN(side))
+            {
+                document.getElementById("display").innerHTML="Enter a number";
+            }
+            else{
+                var result=(2*side - 4)*90;
+                document.getElementById("display").innerHTML="Sum of interior angles is:" + result;
+            }
+            
+        }
+        
+    </script>
+</head>
+<body>
+    <label for="polygon">Enter number of side of polygon:</label><input id="polygon" type="text" placeholder="..." ><br>
+    <input type="button" value="Sum" onclick="sumPolygon()"><br><br>
+    <div id="display"></div>
+</body>
+</html>

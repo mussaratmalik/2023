@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var sumNum=0;
+        function calculateSum(){
+            var n = parseInt(document.getElementById("num").value);
+            
+            if(!isNaN(n)){
+                if(n>=10000){
+                    var x=new Array();
+                    while(n){
+                        const last = n%10;
+                        x.unshift(last);
+                        n=Math.floor(n/10);
+                    }
+                    for(var i=0; i<=x.length-1; i++)
+                    {
+                        z=parseInt(x[i]);
+                        if(z%2!=0)
+                        {  
+                            sumNum=sumNum+z;
+                        }  
+                    }
+                    document.getElementById("result").innerHTML="Sum of odd digits are:" +sumNum;
+                }
+                else{
+                    document.getElementById("result").innerHTML="Enter a 5-digit number";
+                }
+            }
+            else{
+                
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Sum of 5digit Odd Numbers</h1>
+    <label for="num">Enter Five digit number:</label><input type="text" id="num" placeholder="...">
+    <input type="button" value="Calculate Sum" onclick="calculateSum()"><br><br>
+    <div id="result"> </div>
+</body>
+</html>
